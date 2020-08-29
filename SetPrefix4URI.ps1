@@ -5,9 +5,14 @@
 # Prefix
 $Prifix = '?Prifix'
 
+# Display Contole
+$DisplayURI = $true
+
 [array]$URI = Get-Clipboard
 
-Write-Output "Input URI : $URI"
+if($DisplayURI ){
+	Write-Output "Input URI : $URI"
+}
 
 # Reject Facebook Prifix
 $URI[$URI.Count -1] = $URI[$URI.Count -1] -replace "\?fbclid=.+", ""
@@ -20,8 +25,9 @@ $URI[$URI.Count -1] = $URI[$URI.Count -1] -replace "\?fbclid=.+", ""
 # Add Prifix
 $URI[$URI.Count -1] += $Prifix
 
-Write-Output "Output URI : $URI"
-
 $URI | Set-Clipboard
 
-Read-Host "Please Enter"
+if( $DisplayURI ){
+	Write-Output "Output URI : $URI"
+	Read-Host "Please Enter"
+}
