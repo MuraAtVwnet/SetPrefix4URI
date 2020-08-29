@@ -1,5 +1,5 @@
 ﻿#################################
-# Create Shortcut
+# Create Desktop Shortcut
 #################################
 $DesktopPath = Join-Path ($env:HOMEDRIVE) ($env:HOMEPATH)
 $DesktopPath = Join-Path $DesktopPath "Desktop"
