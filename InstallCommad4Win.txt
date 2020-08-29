@@ -2,13 +2,13 @@
 if(-not (Test-Path $Terget)){ md $Terget }
 $GitPath = "https://raw.githubusercontent.com/MuraAtVwnet/SetPrefix4URI/master/"
 
-$GetFile = "Install4Win.ps1"
+$GetFile = "Install_Win.ps1"
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
 $GetFile = "SetPrifix4URI.bat"
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
-$GetFile = "Install4Win.bat"
+$GetFile = "Install_Win.bat"
 $InstallBatPath = Join-Path $Terget $GetFile
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile $InstallBatPath
 
