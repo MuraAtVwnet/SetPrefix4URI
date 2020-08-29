@@ -29,5 +29,5 @@ $URI | Set-Clipboard
 
 if( $DisplayURI ){
 	Write-Output "Output URI : $URI"
-	Read-Host "Please Enter"
+	Read-Host "Hit Enter"
 }
