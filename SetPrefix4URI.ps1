@@ -11,7 +11,7 @@ $DisplayURI = $true
 [array]$URI = Get-Clipboard
 
 if($DisplayURI ){
-	Write-Output "Input URI : $URI"
+	Write-Output "Input URI  : $URI"
 }
 
 # Reject Facebook Prifix
