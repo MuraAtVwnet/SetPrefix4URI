@@ -23,7 +23,12 @@ $URI[$URI.Count -1] = $URI[$URI.Count -1] -replace "\?fbclid=.+", ""
 #}
 
 # Add Prifix
-$URI[$URI.Count -1] += $Prifix
+$URILen = $URI[$URI.Count -1].Length
+$PrifixLen = $Prifix.Length
+$TestString = $URI[$URI.Count -1].Substring( $URILen - $PrifixLen, $PrifixLen )
+if( $TestString -ne $Prifix){
+	$URI[$URI.Count -1] += $Prifix
+}
 
 $URI | Set-Clipboard
 
