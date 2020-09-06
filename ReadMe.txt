@@ -10,7 +10,7 @@ Microsoft MVP イベントの一つで「MVP Docs & Learn Champion」ってイ�
 ちなみに、このスクリプトのインストールと実行には管理権限は不要です。
 
 ■ 使い方
-スクリプトのインストールが完了すると、デスクトップに「SetPrefix4URI」というショートカットが作られます。
+スクリプトのインストールが完了すると、デスクトップに技術エリアのショートカットが作られます。
 
 Web ブラウザの URI をクリップボードにコピーして、作成されたショートカットをダブルクリックすると、プレフィックスを付加した URI がクリップボードにセットされます。
 
@@ -23,7 +23,7 @@ Web ブラウザの URI をクリップボードにコピーして、作成さ�
 まずは PowerShell を起動します
 PowerShell を起動するには、スタートメニューを右クリックして Windows PowerShell を選択します。
 
-以下インストールコマンドを PowerShell にペーストしてください(マウス右クリックでペーストできます)
+以下コードダウンロードコマンドを PowerShell にペーストしてください(マウス右クリックでペーストできます)
 
 
 $Terget = "C:\Script"
@@ -37,25 +37,21 @@ $GetFile = "SetPrifix4URI.bat"
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
 $GetFile = "Install_Win.bat"
-$InstallBatPath = Join-Path $Terget $GetFile
-Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile $InstallBatPath
-
-. $InstallBatPath
+Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
 $GetFile = "SetPrefix4URI.ps1"
-$ScriptPath = Join-Path $Terget $GetFile
-Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile $ScriptPath
+Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
-notepad $ScriptPath
+$GetFile = "CreatorID.csv"
+Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
 
-インストールコマンドをペーストすると、デスクトップに「SetPrifix4URI」のショートカットが作成され、メモ帳で「SetPrefix4URI.ps1」が開かれます。
+コードダウンロード後、C:\Script\CreatorID.csv に技術エリアと Creator ID を書いて上書き保存してください。
 
-「SetPrefix4URI.ps1」の $Prefix に Creator ID をセットして保存すれば準備完了です。
+CSV の更新が完了したら、C:\Script\Install_Win.bat を起動すると、技術領域のショートカットがデスクトップに作成されます。
 
-プレフィックス確認を表示しないようにする場合は、$DisplayURI に $false をセットします。
+プレフィックス確認を表示しないようにする場合は、C:\Script にある 技術領域 + .ps1 をテキストエディタで開き、$DisplayURI に $false をセットします。
 
-設定を再編集する場合は、"C:\Script\SetPrefix4URI.ps1" をメモ帳などのテキストエディタで編集してください。
 
 ■ Mac での利用
 プレフィックスを付ける SetPrefix4URI.ps1 は PowerShell Core(7.3 で動作確認)でも動作するので、Mac OS でも機能すると思いますが、Windows のようにデスクトップにショートカットを作って簡単に .ps1 を動かす方法不明だったのでインストーラー等が準備出来ていません。
