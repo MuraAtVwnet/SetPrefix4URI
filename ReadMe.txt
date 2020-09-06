@@ -56,7 +56,7 @@ CSV の更新が完了したら、C:\Script\Install_Win.bat を起動すると�
 
 
 ■ Mac での利用
-プレフィックスを付ける SetPrefix4URI.ps1 は PowerShell Core(7.3 で動作確認)でも動作するので、Mac OS でも機能すると思いますが、Windows のようにデスクトップにショートカットを作って簡単に .ps1 を動かす方法不明だったのでインストーラー等が準備出来ていません。
+プレフィックスを付ける SetPrefix4URI.ps1 は PowerShell Core(7.0.3 で動作確認)でも動作するので、Mac OS でも機能すると思いますが、Windows のようにデスクトップにショートカットを作って簡単に .ps1 を動かす方法不明だったのでインストーラー等が準備出来ていません。
 
 
 ■ リポジトリ
@@ -69,6 +69,5 @@ https://github.com/MuraAtVwnet/SetPrefix4URI
 ■ Web ページ
 Windows インストール方法の画面付き説明は以下ページを見てください。
 
-URI にプレフィックス(ID)を付加する PowerShell スクリプト
+URI に Creator ID を付加する PowerShell スクリプト
 http://www.vwnet.jp/Windows/PowerShell/2020082901/SetPrefix4URI.htm
-
