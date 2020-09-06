@@ -45,6 +45,8 @@ Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFil
 $GetFile = "CreatorID.csv"
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
 
+ii $Terget
+
 
 コードダウンロード後、C:\Script\CreatorID.csv に技術エリアと Creator ID を書いて上書き保存してください。
 

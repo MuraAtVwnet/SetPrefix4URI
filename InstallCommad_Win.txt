@@ -16,3 +16,7 @@ Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFil
 
 $GetFile = "CreatorID.csv"
 Invoke-WebRequest -Uri ($GitPath + $GetFile) -OutFile (Join-Path $Terget $GetFile)
+
+ii $Terget
+
+
