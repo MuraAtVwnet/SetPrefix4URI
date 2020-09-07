@@ -55,7 +55,16 @@ if( $TempBuffersCount -ne 1 ){
 	$URI[$URI.Count -1] = $TempBuffers[0]
 }
 else{
-	$URI[$URI.Count -1] += $Prifix
+	# Found '#'
+	[array]$TempBuffers = $URI[$URI.Count -1].Split( '#' )
+	$TempBuffersCount = $TempBuffers.Count
+	if( $TempBuffersCount -ne 1 ){
+		$TempBuffers[0] += $Prifix + '#' + $TempBuffers[1]
+		$URI[$URI.Count -1] = $TempBuffers[0]
+	}
+	else{
+		$URI[$URI.Count -1] += $Prifix
+	}
 }
 
 $URI | Set-Clipboard
